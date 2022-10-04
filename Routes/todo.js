@@ -1,30 +1,39 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 const {
-    create, todoById , read , update , remove , list
-}= require('../controllers/todo');
+  create,
+  todoById,
+  read,
+  update,
+  remove,
+  list,
+} = require("../controllers/todo");
 
-const todo = require('../models/todo');
+const todo = require("../models/todo");
 
-router.get('/todo/:todoId', read)
+router.get("/todo/:todoId", read);
 
-router.post('/todo/create',
+router.post(
+  "/todo/create",
 
- create);
+  create
+);
 
- router.put('/todo/update/:todoId',
+router.put(
+  "/todo/update/:todoId",
 
- update);
+  update
+);
+/**yyyyyyyyyyyyyyyyyyyyyyy */
 
- 
- router.delete('/todo/:todoId',
+router.delete(
+  "/todo/:todoId",
 
- remove);
- router.get('/todos', list)
+  remove
+);
+router.get("/todos", list);
 
- router.param('todoId', todoById);
+router.param("todoId", todoById);
 
-
-
-module.exports= router;
+module.exports = router;
